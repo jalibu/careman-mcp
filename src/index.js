@@ -35,23 +35,6 @@ import {
 } from "./api.js";
 
 // ---------------------------------------------------------------------------
-// Session (lazy singleton — reused across all tool calls)
-// ---------------------------------------------------------------------------
-
-let session = null;
-
-function getSession() {
-  if (!session) {
-    session = new CareManSession({
-      baseUrl: process.env.CAREMAN_URL,
-      username: process.env.CAREMAN_USERNAME,
-      password: process.env.CAREMAN_PASSWORD,
-    });
-  }
-  return session;
-}
-
-// ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 
@@ -72,6 +55,23 @@ async function run(fn) {
   } catch (e) {
     return err(e.message);
   }
+}
+
+// ---------------------------------------------------------------------------
+// Session (lazy singleton — reused across all tool calls)
+// ---------------------------------------------------------------------------
+
+let session = null;
+
+function getSession() {
+  if (!session) {
+    session = new CareManSession({
+      baseUrl: process.env.CAREMAN_URL,
+      username: process.env.CAREMAN_USERNAME,
+      password: process.env.CAREMAN_PASSWORD,
+    });
+  }
+  return session;
 }
 
 // ---------------------------------------------------------------------------
