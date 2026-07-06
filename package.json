@@ -1,6 +1,6 @@
 {
   "name": "@jalibu/careman-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP Server for CareMan Dienstplan (opta data) — read-only API facade",
   "type": "module",
   "bin": {
@@ -21,7 +21,13 @@
   "engines": {
     "node": ">=18"
   },
-  "keywords": ["mcp", "careman", "dienstplan", "rettungsdienst", "drk"],
+  "keywords": [
+    "mcp",
+    "careman",
+    "dienstplan",
+    "rettungsdienst",
+    "drk"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
